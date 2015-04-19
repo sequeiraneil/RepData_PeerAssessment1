@@ -88,8 +88,7 @@ median(total_daily_steps$tot, na.rm = TRUE)
 
 ##### Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-A: This requires the data to be aggregated by the interval. Note that the xlabels 
-refer to 5 minute interval time slots, ranging from 00:00 hours to 24:00 hours.
+A: This requires the data to be aggregated by the interval. Note that the xlabels refer to 5 minute interval time slots, ranging from 00:00 hours to 24:00 hours.
 
 
 ```{r}
@@ -99,8 +98,7 @@ steps_per_interval <- activity %>%
                         summarise(steps_pi = mean(steps))
 
 plot(y = steps_per_interval$steps_pi, x = steps_per_interval$interval, 
-        type = "l", xlab = "5 minute intervals", main = "Pattern of Daily 
-        Activity", ylab = "Average steps")
+        type = "l", xlab = "5 minute intervals", main = "Pattern of Daily Activity", ylab = "Average steps")
 
 ```
 
@@ -151,6 +149,8 @@ new_total_daily_steps <- new %>%
 
 
 #### Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+
+The blue vertical lines represent the median steps taken for each plot
 
 ```{r, , fig.width = 10, fig.height = 5}
 
