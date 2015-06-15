@@ -72,14 +72,14 @@ hist(total_daily_steps$tot, 10, main = "Histogram of steps \n taken each day",
 
 #### Mean number of steps
 
-```{r, echo = FALSE}
+```{r, echo = TRUE}
 mean(total_daily_steps$tot, na.rm = TRUE)
 ```
 
 
 #### Median number of steps
 
-```{r, echo = FALSE}
+```{r, echo = TRUE}
 median(total_daily_steps$tot, na.rm = TRUE)
 ```
 
