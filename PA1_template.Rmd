@@ -3,7 +3,6 @@ title: "Reproducible Research Project 1"
 author: "sequeiraneil"
 output: 
   html_document: 
-    fig_caption: yes
     keep_md: yes
 keep_md: yes
 ---
@@ -14,10 +13,10 @@ day. The data consists of two months of data from an anonymous
 individual collected during the months of October and November, 2012
 and include the number of steps taken in 5 minute intervals each day.
 
-For this assignment, we will be using the dplyr package to transform data & 
-the gglot2 package to create the plots.
+For this assignment, we will be using the *dplyr* package to transform data & 
+both the *base* plotting system & *gglot2* package to create the plots.
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, echo = TRUE}
 library(dplyr)
 library(ggplot2)
 ```
@@ -46,7 +45,7 @@ str(activity)
 
 The date field doesn't look like it is formatted as date, so transform it here.
 
-```{r}
+```{r, echo = TRUE}
 activity$date <- as.Date(activity$date)
 str(activity)
 ```
@@ -57,7 +56,7 @@ str(activity)
 We first calculate the total number of steps taken per day, ignoring 
 the missing values for this calculation
 
-```{r, warning = FALSE, message = FALSE}
+```{r, warning = FALSE, message = FALSE, echo = TRUE}
 total_daily_steps <- activity %>% 
                         group_by(date) %>%
                         filter(!is.na(steps)) %>%       # ignores missing values
@@ -145,7 +144,7 @@ there are missing values, & hence the 5 minute interval mean is used.
 
 ### Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
-```{r }
+```{r, echo = TRUE }
 
 steps <- data.frame(activity$steps)
 steps[is.na(steps),] <- ceiling(tapply(X=activity$steps,INDEX=activity$interval,
@@ -237,7 +236,7 @@ wend <- new %>%
 ### Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
 
 
-```{r, fig.height= 5, fig.width = 10}
+```{r, fig.height= 5, fig.width = 10, echo = TRUE}
 
 par(mfrow = c(1,2))
 

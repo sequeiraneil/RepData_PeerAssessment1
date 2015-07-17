@@ -7,8 +7,8 @@ day. The data consists of two months of data from an anonymous
 individual collected during the months of October and November, 2012
 and include the number of steps taken in 5 minute intervals each day.
 
-For this assignment, we will be using the dplyr package to transform data & 
-the gglot2 package to create the plots.
+For this assignment, we will be using the *dplyr* package to transform data & 
+both the *base* plotting system & *gglot2* package to create the plots.
 
 
 ```r
